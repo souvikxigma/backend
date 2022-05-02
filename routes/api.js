@@ -7,6 +7,12 @@ const util = require('util');
 //creating a router object 
 let router = express.Router();
 
+router.get('/',(req,res)=>{
+    res.status(200).json({
+        message: 'api works',
+    });
+})
+
 router.get('/allinfo', (req, res) => {
 
     db.query('SELECT * FROM states', function (error, results, fields) {
